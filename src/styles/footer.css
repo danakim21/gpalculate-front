@@ -1,0 +1,17 @@
+footer {
+  background: linear-gradient(
+    60deg,
+    rgba(3, 185, 149, 1) 0%,
+    rgba(3, 155, 163, 1) 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8em 5em;
+  margin-top: 17em;
+  color: white;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}

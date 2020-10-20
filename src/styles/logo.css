@@ -1,0 +1,17 @@
+/* .logo-div {
+  position: relative;
+} */
+
+.logo-img {
+  position: relative;
+  width: 12%;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.logo-div p {
+  color: white;
+}

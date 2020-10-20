@@ -1,0 +1,41 @@
+@font-face {
+  font-family: C-Book;
+  src: url('./fonts/Circular Std Book.ttf');
+}
+
+@font-face {
+  font-family: C-Medium;
+  src: url('./fonts/Circular Std Medium.ttf');
+}
+
+@font-face {
+  font-family: C-Bold;
+  src: url('./fonts/Circular Std Bold.ttf');
+}
+
+body {
+  margin: 0;
+  font-family: C-Book;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.cmedium {
+  font-style: C-Medium;
+}
+
+.gradient-color {
+  background: linear-gradient(
+    60deg,
+    rgba(3, 185, 149, 1) 0%,
+    rgba(3, 155, 163, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grey {
+  color: #5e5e5e;
+}
