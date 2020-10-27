@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Block from './Block';
+import '../styles/blockList.css';
 
 function BlockList({ semesters }) {
   return (
-    <div>
+    <div id="blockListDiv">
       {semesters.map((semester, i) => (
         <Block key={i} semesterId={i} />
       ))}
