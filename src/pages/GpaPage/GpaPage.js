@@ -1,6 +1,7 @@
 import React from 'react';
 import SideBar from '../../components/SideBar';
 import BlockList from '../../components/BlockList';
+
 import '../../styles/gpaPage.css';
 
 function GpaPage() {

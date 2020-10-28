@@ -91,12 +91,21 @@ function SideBar(props) {
           {props.semesters.map((semester, semesterId) => (
             <div key={semesterId}>
               <p>
-                Semester {semesterId + 1}: {calculateSemesterGpa(semester)} /
-                4.3
+                <span className="gradient-color sidebar-summary-title">
+                  Semester {semesterId + 1}:
+                </span>
+                {calculateSemesterGpa(semester)}{' '}
+                <span className="light-grey">/ 4.3</span>
               </p>
             </div>
           ))}
-          <p>Cumulative GPA: {calculateTotalGpa(props.semesters)} / 4.3</p>
+          <p>
+            <span className="gradient-color sidebar-summary-title">
+              Cumulative GPA:
+            </span>
+            {calculateTotalGpa(props.semesters)}{' '}
+            <span className="light-grey">/ 4.3</span>
+          </p>
         </div>
         <button>Download PDF</button>
       </div>

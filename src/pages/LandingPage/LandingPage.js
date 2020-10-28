@@ -4,6 +4,7 @@ import '../../styles/landingpage.css';
 import Logo from '../../components/Logo';
 import Button1 from '../../components/Button';
 import Fade from 'react-reveal/Fade';
+import Footer from '../../components/Footer';
 
 function LandingPage() {
   return (
@@ -34,7 +35,7 @@ function LandingPage() {
                 and plan your semester in advance
               </p>
             </Fade>
-            <Link to="/gpaCalculator">
+            <Link to="/gpa-calculator">
               <Button1 buttonid={'landing-button'} text={'Get Started'} />
             </Link>
           </div>
@@ -83,6 +84,7 @@ function LandingPage() {
           </div>
         </Fade>
       </div>
+      <Footer></Footer>
     </>
   );
 }

@@ -19,6 +19,11 @@
   padding: 1em 1.7em;
 }
 
+.block-div-info input {
+  font-family: C-Book;
+  /* border: none; */
+}
+
 .hide-block .block-div-title {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
