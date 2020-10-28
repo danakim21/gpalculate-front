@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SemesterLine from './SemesterLine';
-import { deleteSemester } from '../redux';
+import { deleteSemester, toggleSemester } from '../redux';
 import '../styles/block.css';
 
 function Block(props) {
@@ -20,23 +20,27 @@ function Block(props) {
     )
     .toFixed(1);
   return (
-    <div className="blockDiv">
-      <p className="blockDivTitle">Semester {props.semesterId + 1}</p>
-      <div>
-        {props.semester.map((course, i) => (
-          <SemesterLine key={i} semesterId={props.semesterId} courseId={i} />
-        ))}
-        <p>{cumulativeSemesterCredits}</p>
-        <p>{cumulativeSemesterGrades}</p>
+    <div className={'block-div ' + (props.semesterShown ? '' : 'hide-block')}>
+      <p className="block-div-title" onClick={() => props.toggleSemester()}>
+        Semester {props.semesterId + 1}
+      </p>
+      <div className="block-div-info">
+        <div>
+          {props.semester.map((course, i) => (
+            <SemesterLine key={i} semesterId={props.semesterId} courseId={i} />
+          ))}
+          <p>{cumulativeSemesterCredits}</p>
+          <p>{cumulativeSemesterGrades}</p>
+        </div>
+        <div>
+          <p>
+            Cumulative GPA:{' '}
+            {(cumulativeSemesterGrades / cumulativeSemesterCredits).toFixed(2)}{' '}
+            / 4.3
+          </p>
+        </div>
+        <button onClick={() => props.deleteSemester()}>Delete Semester</button>
       </div>
-      <div>
-        <p>
-          Cumulative GPA:{' '}
-          {(cumulativeSemesterGrades / cumulativeSemesterCredits).toFixed(2)} /
-          4.3
-        </p>
-      </div>
-      <button onClick={() => props.deleteSemester()}>Delete Semester</button>
     </div>
   );
 }
@@ -44,6 +48,7 @@ function Block(props) {
 const mapStateToProps = (state, ownProps) => {
   return {
     semester: state.semesters[ownProps.semesterId],
+    semesterShown: state.semestersShown[ownProps.semesterId],
   };
 };
 
@@ -51,6 +56,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     // deleteSemester
     deleteSemester: () => dispatch(deleteSemester(ownProps.semesterId)),
+    // toggleSemester
+    toggleSemester: () => dispatch(toggleSemester(ownProps.semesterId)),
   };
 };
 

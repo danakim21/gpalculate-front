@@ -1,16 +1,29 @@
-.blockDiv {
+.block-div {
   /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 15px;
   width: 85%;
   margin: auto;
-  margin-bottom: 5em;
+  margin-bottom: 3em;
 }
 
-.blockDivTitle {
+.block-div-title {
   background-color: #f6f7fb;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  padding: 1em;
+  padding: 1em 1.7em;
   cursor: pointer;
+}
+
+.block-div-info {
+  padding: 1em 1.7em;
+}
+
+.hide-block .block-div-title {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.hide-block .block-div-info {
+  display: none;
 }

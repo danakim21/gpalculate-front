@@ -5,7 +5,7 @@ import '../styles/blockList.css';
 
 function BlockList({ semesters }) {
   return (
-    <div id="blockListDiv">
+    <div id="block-list-div">
       {semesters.map((semester, i) => (
         <Block key={i} semesterId={i} />
       ))}

@@ -6,6 +6,7 @@ import {
   UPDATE_COURSE_INCLUDED,
   DELETE_COURSE,
   DELETE_SEMESTER,
+  TOGGLE_SEMESTER,
 } from './semesterTypes';
 
 export const updateCourseName = (semesterId, courseId, courseName) => {
@@ -84,6 +85,15 @@ export const deleteCourse = (semesterId, courseId) => {
 export const deleteSemester = (semesterId) => {
   return {
     type: DELETE_SEMESTER,
+    payload: {
+      semesterId,
+    },
+  };
+};
+
+export const toggleSemester = (semesterId) => {
+  return {
+    type: TOGGLE_SEMESTER,
     payload: {
       semesterId,
     },

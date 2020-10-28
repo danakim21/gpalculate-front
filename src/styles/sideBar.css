@@ -1,4 +1,44 @@
-#sideBarDiv {
+#sidebar-div {
   flex: 1;
   background: linear-gradient(120deg, #03bd93 0%, rgba(3, 155, 163, 1) 100%);
+  min-height: 50em;
+  min-width: 250px;
+  /* width: 350px; */
+}
+
+#sidebar-content {
+  width: 80%;
+  margin: auto;
+  margin-top: 5em;
+}
+
+.sidebar-title {
+  color: white;
+}
+
+#conversion-chart {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: flex;
+  font-size: 13px;
+  margin-bottom: 4em;
+}
+
+.conversion-column {
+  display: flex;
+  flex: 1;
+}
+
+.conversion-column div:first-child {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#summary-div {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-size: 13px;
+  padding: 0.4em 1em;
 }

@@ -10,3 +10,6 @@ export const DELETE_COURSE = 'DELETE_COURSE';
 
 // Delete Semester
 export const DELETE_SEMESTER = 'DELETE_SEMESTER';
+
+// Toggle Semester
+export const TOGGLE_SEMESTER = 'TOGGLE_SEMESTER';

@@ -6,6 +6,7 @@ import {
   UPDATE_COURSE_INCLUDED,
   DELETE_COURSE,
   DELETE_SEMESTER,
+  TOGGLE_SEMESTER,
 } from './semesterTypes';
 
 const initialState = {
@@ -81,7 +82,7 @@ const initialState = {
       },
     ],
   ],
-  semestersShown: [true, true],
+  semestersShown: [true, false],
 };
 
 const semesterReducer = (state = initialState, action) => {
@@ -215,7 +216,24 @@ const semesterReducer = (state = initialState, action) => {
         semesters: state.semesters.filter(
           (semester, semesterId) => semesterId !== action.payload.semesterId
         ),
+        semestersShown: state.semestersShown.filter(
+          (semester, semesterId) => semesterId !== action.payload.semesterId
+        ),
       };
+
+    // Toggle Semester
+    case TOGGLE_SEMESTER:
+      return {
+        ...state,
+        semestersShown: state.semestersShown.map((semester, semesterId) => {
+          if (action.payload.semesterId === semesterId) {
+            return !semester;
+          }
+          return semester;
+        }),
+      };
+
+    // Default
     default:
       return state;
   }

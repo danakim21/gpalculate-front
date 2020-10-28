@@ -6,7 +6,7 @@ import '../../styles/gpaPage.css';
 function GpaPage() {
   return (
     <div>
-      <div id="gpaPageBody">
+      <div id="gpa-page-body">
         <SideBar></SideBar>
         <BlockList></BlockList>
       </div>
