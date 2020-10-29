@@ -9,7 +9,7 @@
 #sidebar-content {
   width: 80%;
   margin: auto;
-  margin-top: 5em;
+  margin-top: 7em;
 }
 
 .sidebar-title {
@@ -45,4 +45,8 @@
 
 .sidebar-summary-title {
   margin-right: 0.5em;
+}
+
+#summary-div hr {
+  border: 1px solid #f6f7fb;
 }

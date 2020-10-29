@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/landingpage.css';
 import Logo from '../../components/Logo';
-import Button1 from '../../components/Button';
+import Button1 from '../../components/Button1';
 import Fade from 'react-reveal/Fade';
 import Footer from '../../components/Footer';
 

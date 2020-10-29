@@ -4,15 +4,31 @@
   border-radius: 15px;
   width: 85%;
   margin: auto;
-  margin-bottom: 3em;
+  margin-bottom: 5em;
 }
 
 .block-div-title {
   background-color: #f6f7fb;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  padding: 1em 1.7em;
+  padding: 1em 2em;
   cursor: pointer;
+
+  display: flex;
+}
+
+.block-div-title p {
+  margin: 0;
+}
+
+.block-div-title p:first-child {
+  /* float: left; */
+}
+
+.block-div-title p:last-child {
+  flex: 1;
+  text-align: right;
+  font-size: 14px;
 }
 
 .block-div-info {
@@ -24,6 +40,25 @@
   /* border: none; */
 }
 
+.block-div-bottom {
+  display: flex;
+  margin-bottom: 0.5em;
+  align-items: center;
+}
+
+.block-div-bottom p {
+  margin: 0;
+}
+
+.block-div-bottom div {
+  flex: 1;
+  text-align: right;
+}
+
+.block-div-bottom div button:last-child {
+  margin-left: 2em;
+}
+
 .hide-block .block-div-title {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -31,4 +66,12 @@
 
 .hide-block .block-div-info {
   display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.semester-line-hr {
+  border: 1px solid #f6f7fb;
 }

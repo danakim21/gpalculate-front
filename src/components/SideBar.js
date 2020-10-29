@@ -4,6 +4,29 @@ import Logo from './Logo';
 import '../styles/sideBar.css';
 
 function SideBar(props) {
+  // Convert Letter Grade
+  const convertLetterGrade = (letterGrade) => {
+    const conversion = {
+      'A+': 4.3,
+      A: 4.0,
+      'A-': 3.7,
+      'B+': 3.3,
+      B: 3.0,
+      'B-': 2.7,
+      'C+': 2.3,
+      C: 2.0,
+      'C-': 1.7,
+      'D+': 1.3,
+      D: 1.0,
+      'D-': 0.7,
+    };
+    let converted = conversion[letterGrade];
+    // if (!converted) {
+
+    // }
+    return converted;
+  };
+
   let calculateSemesterGpa = (semester) => {
     semester = semester.filter((course) => course.included);
     let cumulativeSemesterCredits = semester.reduce(
@@ -13,7 +36,8 @@ function SideBar(props) {
     let cumulativeSemesterGrades = semester
       .reduce(
         (accumulator, currentCourse) =>
-          accumulator + currentCourse.credits * currentCourse.numberGrade,
+          accumulator +
+          currentCourse.credits * convertLetterGrade(currentCourse.letterGrade),
         0
       )
       .toFixed(1);
@@ -28,7 +52,8 @@ function SideBar(props) {
       semester.map(
         (course) => (
           (cumulativeCredits += course.credits),
-          (cumulativeGrades += course.credits * course.numberGrade)
+          (cumulativeGrades +=
+            course.credits * convertLetterGrade(course.letterGrade))
         )
       );
     }
@@ -99,6 +124,7 @@ function SideBar(props) {
               </p>
             </div>
           ))}
+          <hr />
           <p>
             <span className="gradient-color sidebar-summary-title">
               Cumulative GPA:

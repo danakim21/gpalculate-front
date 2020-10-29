@@ -5,6 +5,8 @@ import {
   UPDATE_COURSE_NUMBER_GRADE,
   UPDATE_COURSE_INCLUDED,
   DELETE_COURSE,
+  ADD_COURSE,
+  ADD_SEMESTER,
   DELETE_SEMESTER,
   TOGGLE_SEMESTER,
 } from './semesterTypes';
@@ -18,7 +20,7 @@ const initialState = {
         name: 'Data Structures',
         credits: 3,
         letterGrade: 'A+',
-        numberGrade: 4.3,
+        // numberGrade: 4.3,
         included: true,
       },
       // second course
@@ -26,7 +28,7 @@ const initialState = {
         name: 'Design Studio',
         credits: 4,
         letterGrade: 'B',
-        numberGrade: 3.0,
+        // numberGrade: 3.0,
         included: true,
       },
       // third course
@@ -34,7 +36,7 @@ const initialState = {
         name: 'Psychology 101',
         credits: 3,
         letterGrade: 'B-',
-        numberGrade: 3.3,
+        // numberGrade: 3.3,
         included: false,
       },
       // fourth course
@@ -42,7 +44,7 @@ const initialState = {
         name: 'Korean',
         credits: 4,
         letterGrade: 'A',
-        numberGrade: 4.0,
+        // numberGrade: 4.0,
         included: true,
       },
     ],
@@ -53,7 +55,7 @@ const initialState = {
         name: 'aaa Structures',
         credits: 3,
         letterGrade: 'A+',
-        numberGrade: 4.3,
+        // numberGrade: 4.3,
         included: true,
       },
       // second course
@@ -61,7 +63,7 @@ const initialState = {
         name: 'bbb Studio',
         credits: 4,
         letterGrade: 'B',
-        numberGrade: 3.0,
+        // numberGrade: 3.0,
         included: false,
       },
       // third course
@@ -69,7 +71,7 @@ const initialState = {
         name: 'ccc 101',
         credits: 3,
         letterGrade: 'B-',
-        numberGrade: 3.3,
+        // numberGrade: 3.3,
         included: false,
       },
       // fourth course
@@ -77,7 +79,7 @@ const initialState = {
         name: 'ddd',
         credits: 3,
         letterGrade: 'A',
-        numberGrade: 4.0,
+        // numberGrade: 4.0,
         included: true,
       },
     ],
@@ -207,6 +209,63 @@ const semesterReducer = (state = initialState, action) => {
             return semester;
           }
         }),
+      };
+
+    // Add Course
+    case ADD_COURSE:
+      return {
+        ...state,
+        semesters: state.semesters.map((semester, semesterId) => {
+          if (semesterId === action.payload.semesterId) {
+            return [
+              ...semester,
+              {
+                name: '',
+                credits: '',
+                letterGrade: '',
+                included: true,
+              },
+            ];
+          } else {
+            return semester;
+          }
+        }),
+      };
+
+    // Add Semester
+    case ADD_SEMESTER:
+      return {
+        ...state,
+        semesters: [
+          ...state.semesters,
+          [
+            {
+              name: '',
+              credits: '',
+              letterGrade: '',
+              included: true,
+            },
+            {
+              name: '',
+              credits: '',
+              letterGrade: '',
+              included: true,
+            },
+            {
+              name: '',
+              credits: '',
+              letterGrade: '',
+              included: true,
+            },
+            {
+              name: '',
+              credits: '',
+              letterGrade: '',
+              included: true,
+            },
+          ],
+        ],
+        semestersShown: [...state.semestersShown, true],
       };
 
     // Delete Semester

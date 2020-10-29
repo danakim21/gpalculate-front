@@ -3,14 +3,15 @@ nav {
   margin: auto;
   text-align: right;
   padding-top: 2em;
-  margin-bottom: 5em;
+  margin-bottom: 6em;
 }
 
 nav a {
   text-decoration: none;
   color: #929292;
   transition: 0.3s;
-  margin-left: 4em;
+  margin-left: 3em;
+  font-size: 14px;
 }
 
 nav a:hover {

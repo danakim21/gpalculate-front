@@ -1,0 +1,11 @@
+.button2 {
+  font-size: 12px;
+  border-radius: 6px;
+  padding: 0.6em 2.2em;
+  border: none;
+  color: #929292;
+  cursor: pointer;
+  font-family: C-Book;
+  background-color: #f6f7fb;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 20px;
+}

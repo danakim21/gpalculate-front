@@ -1,0 +1,12 @@
+.button3 {
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 0.6em 1.8em;
+  border: none;
+  cursor: pointer;
+  font-family: C-Medium;
+  background: linear-gradient(60deg, #03bd93 0%, rgba(3, 155, 163, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 20px;
+}

@@ -5,6 +5,8 @@ import {
   UPDATE_COURSE_NUMBER_GRADE,
   UPDATE_COURSE_INCLUDED,
   DELETE_COURSE,
+  ADD_COURSE,
+  ADD_SEMESTER,
   DELETE_SEMESTER,
   TOGGLE_SEMESTER,
 } from './semesterTypes';
@@ -79,6 +81,21 @@ export const deleteCourse = (semesterId, courseId) => {
       semesterId,
       courseId,
     },
+  };
+};
+
+export const addCourse = (semesterId) => {
+  return {
+    type: ADD_COURSE,
+    payload: {
+      semesterId,
+    },
+  };
+};
+
+export const addSemester = () => {
+  return {
+    type: ADD_SEMESTER,
   };
 };
 
