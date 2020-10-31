@@ -8,6 +8,7 @@ import {
   updateCourseIncluded,
   deleteCourse,
 } from '../redux';
+import '../styles/semesterLine.css';
 
 function SemesterLine(props) {
   function convertLetterGrade(letterGrade) {
@@ -30,8 +31,9 @@ function SemesterLine(props) {
   }
 
   return (
-    <div>
+    <div className="semester-line-div">
       <input
+        className="semester-line-checkbox"
         type="checkbox"
         checked={props.courseIncluded}
         onChange={() => {
@@ -39,6 +41,7 @@ function SemesterLine(props) {
         }}
       />
       <input
+        className="semester-line-course"
         type="text"
         value={props.courseName}
         placeholder="Course Name"
@@ -47,18 +50,21 @@ function SemesterLine(props) {
         }}
       />
       <input
+        className="semester-line-input"
         type="number"
         value={props.courseCredits}
-        placeholder="Number of Credits"
+        placeholder="Credits"
         onChange={(e) => props.updateCourseCredits(e.target.value)}
       />
       <input
+        className="semester-line-input"
         type="text"
         value={props.courseLetterGrade}
         placeholder="Letter Grade"
         onChange={(e) => props.updateCourseLetterGrade(e.target.value)}
       />
       <input
+        className="semester-line-not-input"
         type="number"
         // value={props.courseNumberGrade}
         // value={conversion[props.courseLetterGrade]}
@@ -66,8 +72,10 @@ function SemesterLine(props) {
         // onChange={(e) => props.updateCourseNumberGrade(e.target.value)}
         placeholder="Number Grade"
         readOnly
+        disabled="disabled"
       />
       <input
+        className="semester-line-not-input"
         type="number"
         // value={(props.courseCredits * props.courseNumberGrade).toFixed(1)}
         value={(
@@ -75,9 +83,9 @@ function SemesterLine(props) {
         ).toFixed(1)}
         placeholder="Total Weight"
         readOnly
+        disabled="disabled"
       />
       <button onClick={() => props.deleteCourse()}>x</button>
-      <hr className="semester-line-hr" />
     </div>
   );
 }

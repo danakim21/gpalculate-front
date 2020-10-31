@@ -1,0 +1,41 @@
+.block-div-info .semester-line-div input {
+  font-family: C-Book;
+}
+
+.semester-line-div {
+  width: 100%;
+  display: flex;
+}
+
+.semester-line-div .semester-line-checkbox {
+  width: 5%;
+}
+
+.semester-line-div .semester-line-course {
+  width: 30%;
+  margin-right: 1em;
+}
+
+.semester-line-div .semester-line-input {
+  width: 15%;
+  margin-right: 1em;
+}
+
+.semester-line-div .semester-line-not-input {
+  width: 15%;
+  border: none;
+  color: #929292;
+  margin-right: 1em;
+}
+
+.semester-line-div .semester-line-not-input::placeholder {
+  color: #929292;
+}
+
+.semester-line-div .semester-line-not-input:disabled {
+  background-color: white;
+}
+
+.semester-line-div button {
+  width: 5%;
+}

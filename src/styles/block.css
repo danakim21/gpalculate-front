@@ -4,7 +4,8 @@
   border-radius: 15px;
   width: 85%;
   margin: auto;
-  margin-bottom: 5em;
+  /* margin-bottom: 5em; */
+  margin-bottom: 3em;
 }
 
 .block-div-title {
@@ -33,11 +34,6 @@
 
 .block-div-info {
   padding: 1em 1.7em;
-}
-
-.block-div-info input {
-  font-family: C-Book;
-  /* border: none; */
 }
 
 .block-div-bottom {

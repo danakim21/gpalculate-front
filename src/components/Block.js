@@ -69,7 +69,10 @@ function Block(props) {
       <div className="block-div-info">
         <div>
           {props.semester.map((course, i) => (
-            <SemesterLine key={i} semesterId={props.semesterId} courseId={i} />
+            <div key={i}>
+              <SemesterLine semesterId={props.semesterId} courseId={i} />
+              <hr className="semester-line-hr" />
+            </div>
           ))}
           <p>{cumulativeSemesterCredits}</p>
           <p>{cumulativeSemesterGrades}</p>
